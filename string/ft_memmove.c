@@ -6,25 +6,22 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 20:24:07 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/04 20:29:35 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 00:46:32 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	if (dest <= src)
-		return (ft_memcpy(dest, src, n));
-	if (dest == NULL || src == NULL)
+	if (dst <= src)
+		return (ft_memcpy(dst, src, len));
+	if (dst == NULL || src == NULL)
 		return (NULL);
-	i = n;
-	while (i > 0)
+	while (len > 0)
 	{
-		i--;
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		len--;
+		((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 	}
-	return (dest);
+	return (dst);
 }
