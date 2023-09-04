@@ -6,7 +6,7 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:46:08 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 00:46:58 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 01:23:52 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_toupper(int c);
 
 // string
 size_t	ft_strlen(const char *s);
