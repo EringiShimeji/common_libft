@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 20:33:10 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 01:41:59 by smatsuo          ###   ########.fr       */
+/*   Created: 2023/09/05 01:57:37 by smatsuo           #+#    #+#             */
+/*   Updated: 2023/09/05 02:08:20 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	if (dst == NULL || src == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
 	i = 0;
-	while (i < dstsize - 1)
+	p1 = s1;
+	p2 = s2;
+	while (i < n)
 	{
-		dst[i] = src[i];
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
 		i++;
 	}
-	dst[i + 1] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (0);
 }
