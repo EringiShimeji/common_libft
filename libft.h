@@ -6,7 +6,7 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:46:08 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 13:23:01 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 17:38:56 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define LIBFT_H
 
 # include <limits.h>
-# include <stddef.h>
 # include <stdlib.h>
-# include <stdint.h>
 
 // ctype
 int		ft_isalpha(int c);
@@ -44,6 +42,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 // stdlib
 int		ft_atoi(const char *str);

@@ -6,7 +6,7 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 03:41:09 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 03:47:06 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 17:04:43 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static void	set_base_and_sign(const char **p, int *sign, int *base)
 static int	add_digit(const char *p, long *res, int base, int sign)
 {
 	int	digit;
-
 
 	if ('0' <= *p && *p <= '0' + base)
 		digit = *p - '0';
