@@ -6,45 +6,38 @@
 /*   By: smatsuo <smatsuo@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 22:28:03 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 22:48:11 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:02:05 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_lltoa(long long num)
+int	ft_itoa_helper(long long n, char *res, int res_i)
 {
-	char		digit[2];
-	char		*rest;
-	char		*tmp;
-
-	digit[0] = num % 10 + '0';
-	digit[1] = 0;
-	if (num < 10)
-		return (ft_strdup(digit));
-	rest = ft_lltoa(num / 10);
-	if (rest == NULL)
-		return (NULL);
-	tmp = rest;
-	rest = ft_strjoin(rest, digit);
-	free(tmp);
-	return (rest);
+	if (n < 10)
+	{
+		res[res_i] = n % 10 + '0';
+		return (res_i + 1);
+	}
+	res_i = ft_itoa_helper(n / 10, res, res_i);
+	res[res_i] = n % 10 + '0';
+	return (res_i + 1);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	char	*tmp;
+	long long	num;
+	char		res[20];
+	int			res_i;
 
-	if (n < 0)
+	num = n;
+	res_i = 0;
+	if (num < 0)
 	{
-		s = ft_lltoa((long long)n * -1);
-		if (s == NULL)
-			return (NULL);
-		tmp = s;
-		s = ft_strjoin("-", s);
-		free(tmp);
-		return (s);
+		res[res_i++] = '-';
+		num *= -1;
 	}
-	return (ft_lltoa(n));
+	res_i = ft_itoa_helper(num, res, res_i);
+	res[res_i] = '\0';
+	return (ft_strdup(res));
 }
