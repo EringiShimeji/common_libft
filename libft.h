@@ -6,7 +6,7 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:46:08 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 03:24:04 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 13:19:26 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <limits.h>
 # include <stddef.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 // ctype
 int		ft_isalpha(int c);
@@ -40,9 +42,11 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strdup(const char *s1);
 
 // stdlib
 int		ft_atoi(const char *str);
 long	ft_strtol(const char *str, char **endptr, int base);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
