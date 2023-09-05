@@ -6,7 +6,7 @@
 /*   By: smatsuo <smatsuo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:46:08 by smatsuo           #+#    #+#             */
-/*   Updated: 2023/09/05 23:09:50 by smatsuo          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:16:39 by smatsuo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 // ctype
 int		ft_isalpha(int c);
@@ -53,5 +54,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_atoi(const char *str);
 long	ft_strtol(const char *str, char **endptr, int base);
 void	*ft_calloc(size_t count, size_t size);
+
+// stdio
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
